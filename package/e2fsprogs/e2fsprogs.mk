@@ -5,7 +5,7 @@
 #############################################################
 
 E2FSPROGS_VERSION = 1.42.2
-E2FSPROGS_SITE = http://$(BR2_SOURCEFORGE_MIRROR).dl.sourceforge.net/sourceforge/e2fsprogs
+E2FSPROGS_SITE = https://www.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v$(E2FSPROGS_VERSION)/e2fsprogs-$(E2FSPROGS_VERSION).tar.gz
 
 E2FSPROGS_CONF_OPT = \
 	--disable-tls \

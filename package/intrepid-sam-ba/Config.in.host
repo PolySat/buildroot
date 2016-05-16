@@ -1,6 +1,0 @@
-config BR2_PACKAGE_HOST_INTREPID_SAM_BA
-	bool "host sam-ba for use with Intrepid board"
-	select BR2_PACKAGE_HOST_SOURCERY_CODEBENCH
-	help
-	  Customized version of Atmel's SAM-BA software the provides the
-          ability to program intrepid system boards.

@@ -11,43 +11,11 @@ config BR2_PACKAGE_FS_CUSTOMIZATION_NONE
 	help
 	  none       do not customize buildroot's output
 
-config BR2_PACKAGE_FS_CUSTOMIZATION_POLYSAT
-	bool "polysat"
-	help
-	  polysat    use PolySat's root file system template for customization
-
 config BR2_PACKAGE_FS_CUSTOMIZATION_FOLDER
 	bool "folder"
 	help
 	  folder     use the files found in a local folder for customization
 endchoice
-
-choice
-	prompt "Polysat generic_filesystem git branch"
-	depends on BR2_PACKAGE_FS_CUSTOMIZATION_POLYSAT
-   default BR2_PACKAGE_FS_CUSTOMIZATION_POLYSAT_version_1_10
-   help
-	  The git branch to use when cloning the PolySat generic_filesystem
-            repo.
-
-   config BR2_PACKAGE_FS_CUSTOMIZATION_POLYSAT_version_head
-      bool "HEAD"
-
-   config BR2_PACKAGE_FS_CUSTOMIZATION_POLYSAT_version_custom
-      bool "Manually specify a git tag"
-
-   config BR2_PACKAGE_FS_CUSTOMIZATION_POLYSAT_version_1_10
-      bool "1.10"
-
-endchoice
-
-config BR2_PACKAGE_FS_CUSTOMIZATION_CONFIG_CUSTOM_VERSION_STR
-   string "generic polysat image version"
-   depends on BR2_PACKAGE_FS_CUSTOMIZATION_POLYSAT
-   depends on BR2_PACKAGE_FS_CUSTOMIZATION_POLYSAT_version_custom
-   help
-      PolySat FS custom git tag.
-
 
 config BR2_PACKAGE_FS_CUSTOMIZATION_PATH
 	depends on BR2_PACKAGE_FS_CUSTOMIZATION_FOLDER
@@ -55,4 +23,3 @@ config BR2_PACKAGE_FS_CUSTOMIZATION_PATH
 	help
 	  The filesystem path to the folder containing the root fs
 	  customization.
-

@@ -1,0 +1,6 @@
+menu "PolySat Packages"
+
+source "package/polysat/librohc/Config.in"
+source "package/polysat/uvccapture/Config.in"
+
+endmenu

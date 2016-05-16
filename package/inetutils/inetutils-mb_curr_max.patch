@@ -1,0 +1,89 @@
+--- inetutils-1.9/lib/mbrtowc.c	2012-01-10 10:49:04.000000000 -0800
++++ inetutils-1.9/lib/mbrtowc.c	2012-01-10 10:49:37.000000000 -0800
+@@ -30,6 +30,10 @@
+ # include "streq.h"
+ # include "verify.h"
+ 
++#ifndef MB_CUR_MAX
++#define MB_CUR_MAX (1)
++#endif
++
+ 
+ verify (sizeof (mbstate_t) >= 4);
+ 
+--- inetutils-1.9/lib/regex.c	2012-01-10 10:54:59.000000000 -0800
++++ inetutils-1.9/lib/regex.c	2012-01-10 10:55:18.000000000 -0800
+@@ -58,6 +58,10 @@
+ #include <regex.h>
+ #include "regex_internal.h"
+ 
++#ifndef MB_CUR_MAX
++#define MB_CUR_MAX (1)
++#endif
++
+ #include "regex_internal.c"
+ #include "regcomp.c"
+ #include "regexec.c"
+--- inetutils-1.9/lib/vasnprintf.c	2012-01-10 11:38:58.000000000 -0800
++++ inetutils-1.9/lib/vasnprintf.c	2012-01-10 11:40:27.000000000 -0800
+@@ -294,6 +294,15 @@
+ # endif
+ #endif
+ 
++int wctomb_stub(char *s, wchar_t wc)
++{
++   if (!s)
++      return 0;
++
++   *s = (char)(wc & 0xFF);
++   return 1;
++}
++
+ #if NEED_PRINTF_INFINITE_DOUBLE && !NEED_PRINTF_DOUBLE && !defined IN_LIBINTL
+ 
+ /* Equivalent to !isfinite(x) || x == 0, but does not require libm.  */
+@@ -2681,7 +2690,7 @@
+ #  if HAVE_WCRTOMB && !defined GNULIB_defined_mbstate_t
+                           count = wcrtomb (cbuf, *arg_end, &state);
+ #  else
+-                          count = wctomb (cbuf, *arg_end);
++                          count = wctomb_stub (cbuf, *arg_end);
+ #  endif
+                           if (count < 0)
+                             {
+@@ -2726,7 +2735,7 @@
+ #  if HAVE_WCRTOMB && !defined GNULIB_defined_mbstate_t
+                           count = wcrtomb (cbuf, *arg_end, &state);
+ #  else
+-                          count = wctomb (cbuf, *arg_end);
++                          count = wctomb_stub (cbuf, *arg_end);
+ #  endif
+                           if (count < 0)
+                             {
+@@ -2775,7 +2784,7 @@
+ #   if HAVE_WCRTOMB && !defined GNULIB_defined_mbstate_t
+                         count = wcrtomb (cbuf, *arg, &state);
+ #   else
+-                        count = wctomb (cbuf, *arg);
++                        count = wctomb_stub (cbuf, *arg);
+ #   endif
+                         if (count <= 0)
+                           /* Inconsistency.  */
+@@ -2857,7 +2866,7 @@
+ #   if HAVE_WCRTOMB && !defined GNULIB_defined_mbstate_t
+                           count = wcrtomb (cbuf, *arg, &state);
+ #   else
+-                          count = wctomb (cbuf, *arg);
++                          count = wctomb_stub (cbuf, *arg);
+ #   endif
+                           if (count <= 0)
+                             /* Inconsistency.  */
+@@ -2886,7 +2895,7 @@
+ #   if HAVE_WCRTOMB && !defined GNULIB_defined_mbstate_t
+                           count = wcrtomb (cbuf, *arg, &state);
+ #   else
+-                          count = wctomb (cbuf, *arg);
++                          count = wctomb_stub (cbuf, *arg);
+ #   endif
+                           if (count <= 0)
+                             {

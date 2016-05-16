@@ -1,0 +1,14 @@
+config BR2_TARGET_ROOTFS_CRAMFS
+	bool "cramfs root filesystem"
+	help
+	  Build a cramfs root filesystem
+
+	  http://sourceforge.net/projects/cramfs/
+
+config BR2_TARGET_USR_LOCAL_CRAMFS
+	bool "cramfs /usr/local filesystem"
+	depends on BR2_TARGET_SEPARATE_USR_LOCAL
+	help
+	  Build a cramfs /usr/local filesystem
+
+	  http://sourceforge.net/projects/cramfs/

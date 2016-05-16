@@ -1,0 +1,43 @@
+--- busybox-1.20.1.orig/init/init.c	2012-11-05 17:17:36.219639801 -0800
++++ busybox-1.20.1/init/init.c	2012-11-05 17:14:57.299641815 -0800
+@@ -645,15 +645,17 @@
+  * _is_ defined, but /etc/inittab is missing, this
+  * results in the same set of default behaviors.
+  */
+-static void parse_inittab(void)
++static void parse_inittab_internal(const char *path, int default_entries)
+ {
+ #if ENABLE_FEATURE_USE_INITTAB
+ 	char *token[4];
+-	parser_t *parser = config_open2("/etc/inittab", fopen_for_read);
++	parser_t *parser = config_open2(path, fopen_for_read);
+ 
+ 	if (parser == NULL)
+ #endif
+ 	{
++      if (default_entries) 
++      {
+ 		/* No inittab file - set up some default behavior */
+ 		/* Reboot on Ctrl-Alt-Del */
+ 		new_init_action(CTRLALTDEL, "reboot", "");
+@@ -674,6 +676,7 @@
+ 		new_init_action(SYSINIT, INIT_SCRIPT, "");
+ 		return;
+ 	}
++   }
+ 
+ #if ENABLE_FEATURE_USE_INITTAB
+ 	/* optional_tty:ignored_runlevel:action:command
+@@ -709,6 +712,12 @@
+ #endif
+ }
+ 
++static void parse_inittab(void)
++{
++   parse_inittab_internal("/etc/inittab", 1);
++   parse_inittab_internal("/usr/local/etc/inittab", 0);
++}
++
+ static void pause_and_low_level_reboot(unsigned magic) NORETURN;
+ static void pause_and_low_level_reboot(unsigned magic)
+ {

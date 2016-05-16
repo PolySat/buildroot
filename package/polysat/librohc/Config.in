@@ -1,0 +1,2 @@
+config BR2_PACKAGE_LIBROHC
+	bool "librohc (Robust header compression)"

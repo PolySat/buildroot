@@ -170,10 +170,7 @@ export HOSTCC_NOCCACHE HOSTCXX_NOCCACHE
 # line doesn't affect the environment of $(shell ..) calls, so
 # explictly throw away any output from 'cd' here.
 export CDPATH:=
-OUT_CREATE_DIR=`readlink $(O)`
-ifeq ($(OUT_CREATE_DIR),)
-	OUT_CREATE_DIR = $(O)
-endif
+OUT_CREATE_DIR:=$(O)
 
 BASE_DIR := $(shell mkdir -p $(OUT_CREATE_DIR) && cd $(O) >/dev/null && pwd)
 $(if $(BASE_DIR),, $(error output directory "$(O)" does not exist))

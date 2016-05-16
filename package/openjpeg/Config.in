@@ -1,0 +1,7 @@
+config BR2_PACKAGE_OPENJPEG
+	bool "jpeg 2k"
+   select host-cmake
+	help
+	  An opensource implementation of the Jpeg2000 standard (jpeg2k)
+
+	  http://www.openjpeg.org

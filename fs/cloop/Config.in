@@ -1,0 +1,22 @@
+config BR2_TARGET_ROOTFS_CLOOP
+	bool "cloop root filesystem for the target device"
+	help
+	  Build a cloop root filesystem
+
+	  cloop is a Linux kernel module that enables compressed
+	  loopback filesystem support. With it you can mount a
+	  compressed filesystem like a block device and seamlessly
+	  decompress its data while accessing it.  The majority of the
+	  software on an LNX-BBC is accessed in this fashion.
+
+config BR2_TARGET_USR_LOCAL_CLOOP
+	bool "cloop /usr/local filesystem for the target device"
+	depends on BR2_TARGET_SEPARATE_USR_LOCAL
+	help
+	  Build a cloop /usr/local filesystem
+
+	  cloop is a Linux kernel module that enables compressed
+	  loopback filesystem support. With it you can mount a
+	  compressed filesystem like a block device and seamlessly
+	  decompress its data while accessing it.  The majority of the
+	  software on an LNX-BBC is accessed in this fashion.

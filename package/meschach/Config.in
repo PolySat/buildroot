@@ -1,0 +1,6 @@
+config BR2_PACKAGE_MESCHACH
+	bool "meschach"
+	help
+	  A library for matrix operations written in C
+
+	  http://homepage.math.uiowa.edu/~dstewart/meschach/

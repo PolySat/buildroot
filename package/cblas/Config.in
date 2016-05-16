@@ -1,0 +1,6 @@
+config BR2_PACKAGE_CBLAS
+	bool "cblas"
+	help
+	  BLAS c library
+
+	  http://www.netlib.org/blas

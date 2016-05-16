@@ -1,0 +1,12 @@
+--- lapack-3.4.2.orig/Makefile	2012-11-02 15:14:48.548791295 -0700
++++ lapack-3.4.2/Makefile	2012-11-02 15:14:58.076790669 -0700
+@@ -14,8 +14,7 @@
+ clean: cleanlib cleantesting cleanblas_testing 
+ 
+ lapack_install:
+-	( cd INSTALL; $(MAKE); ./testlsame; ./testslamch; ./testdlamch; \
+-	./testsecond; ./testdsecnd; ./testieee; ./testversion )
++	( cd INSTALL; $(MAKE); )
+ 
+ blaslib:
+ 	( cd BLAS/SRC; $(MAKE) )

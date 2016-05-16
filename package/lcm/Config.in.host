@@ -1,0 +1,7 @@
+config BR2_PACKAGE_HOST_LCM
+	bool "host LCM"
+        select BR2_PACKAGE_HOST_LIBGLIB2
+	help
+	  LCM - Lightweight Communications and Marshalling
+
+	  https://lcm.googlecode.com/

@@ -1,0 +1,6 @@
+config BR2_PACKAGE_NETPBM
+	bool "netpbm"
+	help
+	  Graphics tools and converters
+
+	  http://www.netperf.org/

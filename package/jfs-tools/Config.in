@@ -1,0 +1,8 @@
+config BR2_PACKAGE_JFS_TOOLS
+	bool "JFS Tools"
+	# uses fork()
+	depends on BR2_USE_MMU
+	help
+	  Userspace tools to manage JFS partitions
+
+	  http://jfs.sourceforge.net

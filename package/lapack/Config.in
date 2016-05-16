@@ -1,0 +1,6 @@
+config BR2_PACKAGE_LAPACK
+	bool "lapack"
+	help
+	  Linear Algebra Package
+
+	  http://www.netlib.org/lapack

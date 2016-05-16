@@ -1,0 +1,30 @@
+config BR2_TARGET_POLYSATBOOTSTRAP
+	depends on BR2_arm926t
+	depends on BR2_TARGET_SEPARATE_USR_LOCAL
+	bool "PolySat Intrepid Bootstrap"
+	help
+	  PolySat Bootstrap is a custom first level bootloader for the
+          Atmel AT91-based PolySat boards.  It is based on the AT91 Bootstrap
+          with added features for kernel and initrd validation prior to boot.
+
+choice
+   prompt "version"
+   depends on BR2_TARGET_POLYSATBOOTSTRAP
+   default BR2_TARGET_POLYSATBOOTSTRAP_version_head
+   help
+      The git version of the code to use
+
+   config BR2_TARGET_POLYSATBOOTSTRAP_version_custom
+      bool "Specify a custom git tag"
+
+   config BR2_TARGET_POLYSATBOOTSTRAP_version_head
+      bool "HEAD"
+
+endchoice
+
+config BR2_TARGET_POLYSATBOOTSTRAP_CONFIG_CUSTOM_VERSION_STR
+   string "PolySat bootstrap version"
+   depends on BR2_TARGET_POLYSATBOOTSTRAP
+   depends on BR2_TARGET_POLYSATBOOTSTRAP_version_custom
+   help
+      Custom git tag to build.

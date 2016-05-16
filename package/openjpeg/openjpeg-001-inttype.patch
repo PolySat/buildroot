@@ -1,0 +1,12 @@
+diff -U3 -r openjpeg-r2301.orig/src/lib/openjp2/opj_inttypes.h openjpeg-r2301/src/lib/openjp2/opj_inttypes.h
+--- openjpeg-r2301.orig/src/lib/openjp2/opj_inttypes.h	2012-03-19 06:46:34.000000000 -0700
++++ openjpeg-r2301/src/lib/openjp2/opj_inttypes.h	2013-03-04 09:26:45.015691889 -0800
+@@ -27,7 +27,7 @@
+ #define OPJ_INTTYPES_H
+ 
+ #include "opj_config.h"
+-#ifdef HAVE_INTTYPES_H
++#if 1
+ #include <inttypes.h>
+ #else
+ #if defined(_WIN32)

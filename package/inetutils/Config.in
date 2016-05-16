@@ -1,0 +1,78 @@
+config BR2_PACKAGE_INETUTILS
+	bool "inetutils - GNU Internet Utilities"
+	help
+	  netutils is a collection of common network programs.
+
+	  http://www.gnu.org/software/inetutils/
+
+config BR2_PACKAGE_INETUTILS_FTP
+	bool "ftp"
+	depends on BR2_PACKAGE_INETUTILS
+	help
+            Installs ftp from the inetutils package
+
+config BR2_PACKAGE_INETUTILS_FTPD
+	bool "ftpd"
+	depends on BR2_PACKAGE_INETUTILS
+	help
+            Installs ftpd from the inetutils package
+
+config BR2_PACKAGE_INETUTILS_INETD
+	bool "inetd"
+	depends on BR2_PACKAGE_INETUTILS
+	help
+            Installs inetd from the inetutils package
+
+config BR2_PACKAGE_INETUTILS_RCP
+	bool "rcp"
+	depends on BR2_PACKAGE_INETUTILS
+	help
+            Installs rcp from the inetutils package
+
+config BR2_PACKAGE_INETUTILS_REXEC
+	bool "rexec"
+	depends on BR2_PACKAGE_INETUTILS
+	help
+            Installs rexec from the inetutils package
+
+config BR2_PACKAGE_INETUTILS_REXECD
+	bool "rexecd"
+	depends on BR2_PACKAGE_INETUTILS
+	help
+            Installs rexecd from the inetutils package
+
+config BR2_PACKAGE_INETUTILS_RLOGIN
+	bool "rlogin"
+	depends on BR2_PACKAGE_INETUTILS
+	help
+            Installs rlogin from the inetutils package
+
+config BR2_PACKAGE_INETUTILS_RSH
+	bool "rsh"
+	depends on BR2_PACKAGE_INETUTILS
+	help
+            Installs rsh from the inetutils package
+
+config BR2_PACKAGE_INETUTILS_TELNET
+	bool "telnet"
+	depends on BR2_PACKAGE_INETUTILS
+	help
+            Installs telnet from the inetutils package
+
+config BR2_PACKAGE_INETUTILS_TELNETD
+	bool "telnetd"
+	depends on BR2_PACKAGE_INETUTILS
+	help
+            Installs telnetd from the inetutils package
+
+config BR2_PACKAGE_INETUTILS_TFTP
+	bool "tftp"
+	depends on BR2_PACKAGE_INETUTILS
+	help
+            Installs tftp from the inetutils package
+
+config BR2_PACKAGE_INETUTILS_TFTPD
+	bool "tftpd"
+	depends on BR2_PACKAGE_INETUTILS
+	help
+            Installs tftpd from the inetutils package

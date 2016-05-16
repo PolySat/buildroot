@@ -1,0 +1,8 @@
+config BR2_PACKAGE_JASPER
+	bool "JasPer"
+	help
+		JASPER - A j2k library
+
+		JasPer
+
+		http://www.ece.uvic.ca/~frodo/jasper/

@@ -1,0 +1,23 @@
+--- a/utils/ldd.c	2012-05-15 00:20:09.000000000 -0700
++++ b/utils/ldd.c	2012-10-16 18:38:40.861800592 -0700
+@@ -460,7 +460,7 @@
+ 
+ 	/* Lastly, search the standard list of paths for the library.
+ 	   This list must exactly match the list in uClibc/ldso/ldso/dl-elf.c */
+-	path = UCLIBC_RUNTIME_PREFIX "lib:" UCLIBC_RUNTIME_PREFIX "usr/lib"
++	path = UCLIBC_RUNTIME_PREFIX "lib:" UCLIBC_RUNTIME_PREFIX "usr/lib:" UCLIBC_RUNTIME_PREFIX "usr/local/lib"
+ #ifndef __LDSO_CACHE_SUPPORT__
+ 	    ":" UCLIBC_RUNTIME_PREFIX "usr/X11R6/lib"
+ #endif
+--- a/ldso/ldso/dl-elf.c	2012-05-15 00:20:09.000000000 -0700
++++ b/ldso/ldso/dl-elf.c	2012-10-16 18:38:54.313799078 -0700
+@@ -297,7 +297,8 @@
+ 	_dl_if_debug_dprint("\tsearching full lib path list\n");
+ 	tpnt1 = search_for_named_library(libname, rflags,
+ 					UCLIBC_RUNTIME_PREFIX "lib:"
+-					UCLIBC_RUNTIME_PREFIX "usr/lib"
++					UCLIBC_RUNTIME_PREFIX "usr/lib:"
++					UCLIBC_RUNTIME_PREFIX "usr/local/lib"
+ #ifndef __LDSO_CACHE_SUPPORT__
+ 					":" UCLIBC_RUNTIME_PREFIX "usr/X11R6/lib"
+ #endif

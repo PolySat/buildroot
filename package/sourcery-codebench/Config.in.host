@@ -1,0 +1,7 @@
+config BR2_PACKAGE_HOST_SOURCERY_CODEBENCH
+	bool "host Sourcery CodeBench"
+	select BR2_PACKAGE_HOST_BZIP2
+	help
+	  Mentor Graphics Sourcery CodeBench Lite toolchain.
+
+	  http://www.mentor.com/embedded-software/sourcery-tools/sourcery-codebench/overview

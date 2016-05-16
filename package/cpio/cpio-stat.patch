@@ -1,0 +1,9 @@
+diff -r -U3 cpio-2.11.orig/src/filetypes.h cpio-2.11/src/filetypes.h
+--- cpio-2.11.orig/src/filetypes.h	2013-02-26 04:07:40.180846511 -0800
++++ cpio-2.11/src/filetypes.h	2013-02-26 04:07:18.108845677 -0800
+@@ -81,5 +81,3 @@
+ #ifndef S_ISLNK
+ #define lstat stat
+ #endif
+-int lstat ();
+-int stat ();

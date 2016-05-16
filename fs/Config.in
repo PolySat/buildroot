@@ -1,0 +1,21 @@
+menu "Filesystem images"
+
+config BR2_TARGET_SEPARATE_USR_LOCAL
+        bool "Separate /usr/local"
+        help
+          Split the root fs image into two pieces: / and /usr/local.
+
+
+source "fs/cramfs/Config.in"
+source "fs/cloop/Config.in"
+source "fs/ext2/Config.in"
+source "fs/jffs2/Config.in"
+source "fs/ubifs/Config.in"
+source "fs/squashfs/Config.in"
+source "fs/tar/Config.in"
+source "fs/cpio/Config.in"
+source "fs/iso9660/Config.in"
+source "fs/initramfs/Config.in"
+source "fs/romfs/Config.in"
+
+endmenu

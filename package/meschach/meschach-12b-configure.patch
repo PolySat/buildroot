@@ -1,0 +1,46 @@
+--- a/configure	2002-11-25 13:35:57.000000000 -0800
++++ b/configure	2014-06-21 06:26:15.187748470 -0700
+@@ -1588,24 +1588,24 @@
+ 
+ fi
+ rm -f conftest*
+-echo 'computing machine epsilon(s)'
+-echo $CC -o macheps dmacheps.c
+-$CC -o macheps dmacheps.c
++#echo 'computing machine epsilon(s)'
++#echo $CC -o macheps dmacheps.c
++#$CC -o macheps dmacheps.c
+ cat >> confdefs.h <<EOF
+-#define D_MACHEPS `macheps`
++#undef D_MACHEPS
+ EOF
+ 
+-echo $CC -o macheps fmacheps.c
+-$CC -o macheps fmacheps.c
++#echo $CC -o macheps fmacheps.c
++#$CC -o macheps fmacheps.c
+ cat >> confdefs.h <<EOF
+-#define F_MACHEPS `macheps`
++#undef F_MACHEPS
+ EOF
+ 
+ echo computing M_MAX_INT
+-echo $CC -o maxint maxint.c
+-$CC -o maxint maxint.c
++#echo $CC -o maxint maxint.c
++#$CC -o maxint maxint.c
+ cat >> confdefs.h <<EOF
+-#define M_MAX_INT `maxint`
++#define M_MAX_INT INT_MAX
+ EOF
+ 
+ echo checking char '\\0' vs. float zeros
+@@ -1694,7 +1694,7 @@
+ EOF
+ if { (eval echo configure:1696: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>&5; }; then
+   rm -rf conftest*
+-  extern int test (int i, double x);
++#  extern int test (int i, double x);
+ else
+   echo "configure: failed program was:" >&5
+   cat conftest.$ac_ext >&5

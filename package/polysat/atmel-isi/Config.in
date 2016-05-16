@@ -1,0 +1,26 @@
+config BR2_PACKAGE_ATMEL_ISI
+    bool "PolySat Atmel ISI Driver"
+    help
+        PolySat's customized version of the Atmel ISI driver
+
+choice
+   prompt "Atmel ISI driver version"
+   depends on BR2_PACKAGE_ATMEL_ISI
+   default BR2_PACKAGE_ATMEL_ISI_version_head
+   help
+      The git version of the atmel-isi driver to use
+
+   config BR2_PACKAGE_ATMEL_ISI_version_head
+      bool "HEAD"
+
+   config BR2_PACKAGE_ATMEL_ISI_version_custom
+      bool "Manually specify git tag"
+
+endchoice
+
+config BR2_PACKAGE_ATMEL_ISI_CONFIG_CUSTOM_VERSION_STR
+   string "Atmel ISI drivers git tag"
+   depends on BR2_PACKAGE_ATMEL_ISI
+   depends on BR2_PACKAGE_ATMEL_ISI_version_custom
+   help
+      Custom git tag to build.

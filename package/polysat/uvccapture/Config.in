@@ -7,7 +7,7 @@ config BR2_PACKAGE_UVCCAPTURE
 choice
    prompt "uvccapture version"
    depends on BR2_PACKAGE_UVCCAPTURE
-   default BR2_PACKAGE_UVCCAPTURE_version_0_92
+   default BR2_PACKAGE_UVCCAPTURE_version_head
    help
       The git version of the uvccapture code to use
 
@@ -16,15 +16,6 @@ choice
 
    config BR2_PACKAGE_UVCCAPTURE_version_custom
       bool "Manually specify git tag"
-
-   config BR2_PACKAGE_UVCCAPTURE_version_0_90
-      bool "0.90"
-
-   config BR2_PACKAGE_UVCCAPTURE_version_0_92
-      bool "0.92"
-
-   config BR2_PACKAGE_UVCCAPTURE_version_0_94
-      bool "0.94"
 
 endchoice
 

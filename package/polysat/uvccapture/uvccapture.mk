@@ -6,7 +6,7 @@
 UVCCAPTURE_SITE:=git@github.com:PolySat/uvccapture.git
 UVCCAPTURE_SITE_METHOD:=git
 UVCCAPTURE_INSTALL_TARGET=YES
-UVCCAPTURE_DEPENDENCIES=jpeg
+UVCCAPTURE_DEPENDENCIES=jpeg polysat_fsw
 
 ifeq ($(BR2_PACKAGE_UVCCAPTURE_version_head),y)
    UVCCAPTURE_VERSION:=$(shell git ls-remote $(UVCCAPTURE_SITE) | grep HEAD | head -1 | sed -e 's/[ \t]*HEAD//')

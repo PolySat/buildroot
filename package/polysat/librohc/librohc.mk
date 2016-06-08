@@ -9,7 +9,6 @@ LIBROHC_SOURCE = rohc-$(LIBROHC_VERSION).tar.bz2
 LIBROHC_LIBTOOL_PATCH = NO
 LIBROHC_INSTALL_STAGING = YES
 LIBROHC_CONF_OPT = --disable-rohc-tests --enable-rohc-debug=0
-#LIBROHC_DEPENDENCIES = host-pkg-config zlib
 
 #LIBROHC_CONF_PREFIX =/usr/local
 #LIBROHC_CONF_EXEC_PREFIX =/usr/local

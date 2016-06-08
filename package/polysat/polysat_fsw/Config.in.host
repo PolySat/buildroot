@@ -1,0 +1,4 @@
+config BR2_PACKAGE_HOST_POLYSAT_FSW
+    bool "Host VM Support for Core PolySat Flight Software"
+    help
+        Host support for PolySat's core flight software

@@ -6,5 +6,6 @@ source "package/openocd/Config.in.host"
 source "package/sam-ba/Config.in.host"
 source "package/sourcery-codebench/Config.in.host"
 source "package/uboot-tools/Config.in.host"
+source "package/polysat/polysat_fsw/Config.in.host"
 
 endmenu

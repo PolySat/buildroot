@@ -1,0 +1,11 @@
+config BR2_PACKAGE_POLYSAT_FSW
+    bool "Core PolySat Flight Software"
+    help
+        Binaries for PolySat's core flight software
+
+config BR2_PACKAGE_POLYSAT_FSW_CONFIG_VERSION_STR
+   string "Core FSW Version"
+   depends on BR2_PACKAGE_POLYSAT_FSW
+   default "1.0.0"
+   help
+      The version of the core FSW to install

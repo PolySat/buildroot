@@ -1,0 +1,28 @@
+config BR2_PACKAGE_EXAMPLE_IMAGE
+	bool "Create board specific image using the public example git repo"
+	help
+            Select to create an image using the public example files.
+             This uses the example_filesystem.git repo from github for customizations.
+
+choice
+   prompt "filesystem version"
+   depends on BR2_PACKAGE_EXAMPLE_IMAGE
+   default BR2_PACKAGE_EXAMPLE_IMAGE_version_head
+   help
+      The git version of the file system files to use
+
+   config BR2_PACKAGE_EXAMPLE_IMAGE_version_head
+      bool "HEAD"
+
+   config BR2_PACKAGE_EXAMPLE_IMAGE_version_custom
+      bool "Manually specify git tag to build"
+
+endchoice
+
+config BR2_PACKAGE_EXAMPLE_IMAGE_CONFIG_CUSTOM_VERSION_STR
+   string "Example Image version"
+   depends on BR2_PACKAGE_EXAMPLE_IMAGE
+   depends on BR2_PACKAGE_EXAMPLE_IMAGE_version_custom
+   help
+      Custom git tag to build.
+

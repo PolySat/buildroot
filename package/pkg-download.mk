@@ -173,6 +173,24 @@ define SHOW_EXTERNAL_DEPS_WGET
   echo $(2)
 endef
 
+# Download a file using basic auth protected wget. Only download the file if it doesn't
+# already exist in the download directory. If the download fails,
+# remove the file (because wget -O creates a 0-byte file even if the
+# download fails).
+define DOWNLOAD_WGET_BAUTH
+	test -e $(DL_DIR)/$(2) || \
+	$(WGET) `cat $($(PKG)_WGET_AUTH)` -O $(DL_DIR)/$(2) '$(call qstrip,$(1))' || \
+	(rm -f $(DL_DIR)/$(2) ; exit 1)
+endef
+
+define SOURCE_CHECK_WGET_BAUTH
+  $(WGET) --spider '$(call qstrip,$(1))'
+endef
+
+define SHOW_EXTERNAL_DEPS_WGET_BAUTH
+  echo $(2)
+endef
+
 define DOWNLOAD_LOCALFILES
 	test -e $(DL_DIR)/$($(PKG)_SOURCE) || \
 		$(LOCALFILES) $(call qstrip,$(subst file://,,$($(PKG)_SITE)))/$($(PKG)_SOURCE) $(DL_DIR)
@@ -218,6 +236,7 @@ define DOWNLOAD_INNER
 			file) $($(DL_MODE)_LOCALFILES) && exit ;; \
 			scp) $($(DL_MODE)_SCP) && exit ;; \
 			hg) $($(DL_MODE)_HG) && exit ;; \
+			wget_bauth) $(call $(DL_MODE)_WGET_BAUTH,$(1),$(2)) && exit ;; \
 			*) $(call $(DL_MODE)_WGET,$(1),$(2)) && exit ;; \
 		esac ; \
 	fi ; \

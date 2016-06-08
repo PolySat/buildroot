@@ -12,3 +12,4 @@
 *.rej
 *~
 .*.swp
+.defconfig

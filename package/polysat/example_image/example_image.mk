@@ -1,6 +1,6 @@
 ifdef BR2_PACKAGE_EXAMPLE_IMAGE
 EXAMPLE_IMAGE_BASE_NAME:=example_image
-EXAMPLE_IMAGE_SITE:=git@github.com:PolySat/example-image.git
+EXAMPLE_IMAGE_SITE:=https://github.com/PolySat/example-image.git
 EXAMPLE_IMAGE_SITE_METHOD:=git
 EXAMPLE_IMAGE_INSTALL_TARGET=YES
 

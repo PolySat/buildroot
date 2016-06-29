@@ -3,7 +3,7 @@
 # Polysat camera drivers
 #
 #############################################################
-ATMEL_ISI_SITE:=git@github.com:PolySat/atmel-isi.git
+ATMEL_ISI_SITE:=https://github.com/PolySat/atmel-isi.git
 ATMEL_ISI_SITE_METHOD:=git
 ATMEL_ISI_INSTALL_TARGET=YES
 ATMEL_ISI_INSTALL_STAGING=YES

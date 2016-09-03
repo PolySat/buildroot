@@ -1,6 +1,7 @@
 menu "PolySat Packages"
 
 source "package/polysat/polysat_fsw/Config.in"
+source "package/polysat/fsw_image/Config.in"
 source "package/polysat/example_image/Config.in"
 source "package/polysat/librohc/Config.in"
 source "package/polysat/atmel-isi/Config.in"

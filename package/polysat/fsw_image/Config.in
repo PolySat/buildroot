@@ -1,0 +1,33 @@
+config BR2_PACKAGE_FSW_IMAGE
+	bool "Create a customized FSW image"
+	help
+            Select to create a custom FSW image using your own git repo.
+
+config BR2_PACKAGE_FSW_IMAGE_CONFIG_GIT_URL
+   string "FSW Image GIT URL"
+   depends on BR2_PACKAGE_FSW_IMAGE
+   default "https://github.com/PolySat/example-image.git"
+   help
+      Custom git tag to build.
+
+choice
+   prompt "filesystem version"
+   depends on BR2_PACKAGE_FSW_IMAGE
+   default BR2_PACKAGE_FSW_IMAGE_version_head
+   help
+      The git version of the file system files to use
+
+   config BR2_PACKAGE_FSW_IMAGE_version_head
+      bool "HEAD"
+
+   config BR2_PACKAGE_FSW_IMAGE_version_custom
+      bool "Manually specify git tag to build"
+
+endchoice
+
+config BR2_PACKAGE_FSW_IMAGE_CONFIG_CUSTOM_VERSION_STR
+   string "Example Image version"
+   depends on BR2_PACKAGE_FSW_IMAGE
+   depends on BR2_PACKAGE_FSW_IMAGE_version_custom
+   help
+      Custom git tag to build.

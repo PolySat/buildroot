@@ -4,7 +4,7 @@
 #
 #############################################################
 POLYSAT_FSW_SITE:=https://satcom.calpoly.edu/fsw
-POLYSAT_FSW_VERSION = 0.0.1
+POLYSAT_FSW_VERSION = 1.0.1
 POLYSAT_FSW_SOURCE = polysat_fsw-$(POLYSAT_FSW_VERSION).tgz
 POLYSAT_FSW_SITE_METHOD:=wget_bauth
 POLYSAT_FSW_WGET_AUTH:=~/.polysat_fsw.auth

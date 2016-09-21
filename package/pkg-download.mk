@@ -179,7 +179,7 @@ endef
 # download fails).
 define DOWNLOAD_WGET_BAUTH
 	test -e $(DL_DIR)/$(2) || \
-	$(WGET) `cat $($(PKG)_WGET_AUTH)` -O $(DL_DIR)/$(2) '$(call qstrip,$(1))' || \
+	$(WGET) $(shell cat $($(PKG)_WGET_AUTH)) -O $(DL_DIR)/$(2) '$(call qstrip,$(1))' || \
 	(rm -f $(DL_DIR)/$(2) ; exit 1)
 endef
 

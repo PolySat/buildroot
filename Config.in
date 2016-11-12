@@ -75,6 +75,13 @@ config BR2_XZCAT
 	  Command to be used to extract a xz'ed file to stdout.
 	  Default is "xzcat"
 
+config BR2_ZIPCAT
+	string "zipcat command"
+	default "unzip"
+	help
+	   Command to be used to extract a zip'ed file to stdout.
+	   Default is "unzip"
+
 config BR2_TAR_OPTIONS
 	string "Tar options"
 	default ""

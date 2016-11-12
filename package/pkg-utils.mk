@@ -69,6 +69,7 @@ INFLATE.tbz  = $(BZCAT)
 INFLATE.tbz2 = $(BZCAT)
 INFLATE.tgz  = $(ZCAT)
 INFLATE.xz   = $(XZCAT)
+INFLATE.zip  = $(ZIPCAT)
 INFLATE.tar  = cat
 
 # MESSAGE Macro -- display a message in bold type

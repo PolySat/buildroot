@@ -236,6 +236,7 @@ KERNEL_ARCH:=$(shell echo "$(ARCH)" | sed -e "s/-.*//" \
 ZCAT:=$(call qstrip,$(BR2_ZCAT))
 BZCAT:=$(call qstrip,$(BR2_BZCAT))
 XZCAT:=$(call qstrip,$(BR2_XZCAT))
+ZIPCAT:=$(call qstrip,$(BR2_ZIPCAT))
 TAR_OPTIONS=$(call qstrip,$(BR2_TAR_OPTIONS)) -xf
 
 # packages compiled for the host go here

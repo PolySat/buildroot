@@ -177,9 +177,10 @@ endef
 # already exist in the download directory. If the download fails,
 # remove the file (because wget -O creates a 0-byte file even if the
 # download fails).
+
 define DOWNLOAD_WGET_BAUTH
 	test -e $(DL_DIR)/$(2) || \
-	$(WGET) $(shell cat $($(PKG)_WGET_AUTH)) -O $(DL_DIR)/$(2) '$(call qstrip,$(1))' || \
+	$(WGET) $($(PKG)_WGET_AUTH) -O $(DL_DIR)/$(2) '$(call qstrip,$(1))' || \
 	(rm -f $(DL_DIR)/$(2) ; exit 1)
 endef
 

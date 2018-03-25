@@ -5,7 +5,7 @@
 #############################################################
 LOGROTATE_VERSION = 3.7.9
 LOGROTATE_SOURCE = logrotate-$(LOGROTATE_VERSION).tar.gz
-LOGROTATE_SITE = https://fedorahosted.org/releases/l/o/logrotate/
+LOGROTATE_SITE = http://sources.buildroot.net
 
 LOGROTATE_DEPENDENCIES = popt
 

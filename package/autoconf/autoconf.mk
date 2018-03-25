@@ -3,8 +3,8 @@
 # autoconf
 #
 #############################################################
-AUTOCONF_VERSION = 2.65
-AUTOCONF_SOURCE = autoconf-$(AUTOCONF_VERSION).tar.bz2
+AUTOCONF_VERSION = 2.69
+AUTOCONF_SOURCE = autoconf-$(AUTOCONF_VERSION).tar.gz
 AUTOCONF_SITE = $(BR2_GNU_MIRROR)/autoconf
 
 AUTOCONF_CONF_ENV = EMACS="no" ac_cv_path_M4=$(HOST_DIR)/usr/bin/m4 \

@@ -1,0 +1,28 @@
+config BR2_PACKAGE_ODE_IMAGE
+	bool "Create board specific image for Falcon ODE"
+	help
+            Select to create an image using the Falcon ODE files.
+             This uses the ode-image.git repo from github for customizations.
+
+choice
+   prompt "filesystem version"
+   depends on BR2_PACKAGE_ODE_IMAGE
+   default BR2_PACKAGE_ODE_IMAGE_version_head
+   help
+      The git version of the file system files to use
+
+   config BR2_PACKAGE_ODE_IMAGE_version_head
+      bool "HEAD"
+
+   config BR2_PACKAGE_ODE_IMAGE_version_custom
+      bool "Manually specify git tag to build"
+
+endchoice
+
+config BR2_PACKAGE_ODE_IMAGE_CONFIG_CUSTOM_VERSION_STR
+   string "ODE Image version"
+   depends on BR2_PACKAGE_ODE_IMAGE
+   depends on BR2_PACKAGE_ODE_IMAGE_version_custom
+   help
+      Custom git tag to build.
+

@@ -1,0 +1,13 @@
+--- uClibc-0.9.33.2.orig/extra/locale/gen_wctype.c	2012-05-15 00:20:09.000000000 -0700
++++ uClibc-0.9.33.2/extra/locale/gen_wctype.c	2018-04-29 10:29:19.385480487 -0700
+@@ -403,7 +403,8 @@
+ 				if (l || u) {
+ 					if ((l != (short)l) || (u != (short)u)) {
+ 						verbose_msg("range assumption error!  %x  %ld  %ld\n", c, l, u);
+-						return EXIT_FAILURE;
++						// return EXIT_FAILURE;
++						u = l = 0;
+ 					}
+ 					for (i = 0; i < ul_count; i++) {
+ 						if ((l == uldiff[i].l) && (u == uldiff[i].u)) {
+

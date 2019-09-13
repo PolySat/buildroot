@@ -6,7 +6,9 @@
 BZIP2_VERSION:=1.0.5
 BZIP2_SONAME=1.0.4
 BZIP2_SOURCE:=bzip2-$(BZIP2_VERSION).tar.gz
-BZIP2_SITE:=http://www.bzip.org/$(BZIP2_VERSION)
+#BZIP2_SITE:=http://www.bzip.org/$(BZIP2_VERSION)
+#BZIP2_SITE:=http://polysat2.cls.calpoly.edu
+BZIP2_SITE:=https://sourceware.org/pub/bzip2/
 BZIP2_INSTALL_STAGING=YES
 BZIP2_POST_INSTALL_TARGET_HOOKS+=BZIP2_CLEAN_STATIC_LIBS
 

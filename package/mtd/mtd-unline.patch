@@ -1,0 +1,28 @@
+--- mtd-utils-1.4.9.orig/mkfs.ubifs/hashtable/hashtable_itr.h	2011-12-17 06:38:56.000000000 -0800
++++ mtd-utils-1.4.9/mkfs.ubifs/hashtable/hashtable_itr.h	2018-05-02 04:59:36.877134443 -0700
+@@ -28,20 +28,14 @@
+ /* hashtable_iterator_key
+  * - return the value of the (key,value) pair at the current position */
+ 
+-extern inline void *
+-hashtable_iterator_key(struct hashtable_itr *i)
+-{
+-    return i->e->k;
+-}
++extern void *
++hashtable_iterator_key(struct hashtable_itr *i);
+ 
+ /*****************************************************************************/
+ /* value - return the value of the (key,value) pair at the current position */
+ 
+-extern inline void *
+-hashtable_iterator_value(struct hashtable_itr *i)
+-{
+-    return i->e->v;
+-}
++extern void *
++hashtable_iterator_value(struct hashtable_itr *i);
+ 
+ /*****************************************************************************/
+ /* advance - advance the iterator to the next element
+

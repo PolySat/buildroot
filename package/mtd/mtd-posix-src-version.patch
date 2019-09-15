@@ -1,0 +1,9 @@
+--- mtd-utils-1.4.9.orig/serve_image.c	2011-12-17 06:38:56.000000000 -0800
++++ mtd-utils-1.4.9/serve_image.c	2018-05-02 05:02:37.982271476 -0700
+@@ -1,5 +1,5 @@
+ #define PROGRAM_NAME "serve_image"
+-#define _POSIX_C_SOURCE 199309
++#define _POSIX_C_SOURCE 200112L
+ 
+ #include <time.h>
+ #include <errno.h>

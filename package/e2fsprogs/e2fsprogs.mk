@@ -7,7 +7,11 @@
 E2FSPROGS_VERSION = 1.42.2
 E2FSPROGS_SITE = https://www.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v$(E2FSPROGS_VERSION)/e2fsprogs-$(E2FSPROGS_VERSION).tar.gz
 
+HOST_E2FSPROGS_CONF_OPT = \
+	CFLAGS="-DNO_INLINE_FUNCS -Wformat-extra-args"
+
 E2FSPROGS_CONF_OPT = \
+	CFLAGS=-DNO_INLINE_FUNCS \
 	--disable-tls \
 	--enable-elf-shlibs \
 	$(if $(BR2_PACKAGE_E2FSPROGS_DEBUGFS),,--disable-debugfs) \

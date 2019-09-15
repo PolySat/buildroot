@@ -3,7 +3,6 @@
 # automake
 #
 #############################################################
-#AUTOMAKE_VERSION = 1.11.1
 AUTOMAKE_VERSION = 1.16.1
 AUTOMAKE_SOURCE = automake-$(AUTOMAKE_VERSION).tar.gz
 AUTOMAKE_SITE = $(BR2_GNU_MIRROR)/automake

@@ -6,6 +6,6 @@ source "package/polysat/example_image/Config.in"
 source "package/polysat/librohc/Config.in"
 source "package/polysat/atmel-isi/Config.in"
 source "package/polysat/uvccapture/Config.in"
-source "package/polysat/ade-pib-driver/Config.in"
+source "package/polysat/ade_pib_driver/Config.in"
 
 endmenu

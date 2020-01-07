@@ -1,0 +1,7 @@
+config BR2_PACKAGE_SUBMODULE_IMAGE
+	bool "Create image using files from buildroot's parent"
+	help
+            Select this option when using buildroot as a git submodule
+             underneath a repo that contains custom files for your FSW image.
+             This option specifically looks in ../rootfs for additional
+             files to include in the build.

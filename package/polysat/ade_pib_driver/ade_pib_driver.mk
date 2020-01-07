@@ -3,7 +3,7 @@
 # Polysat exocube pib driver
 #
 #############################################################
-ADE_PIB_DRIVER_SITE:=git@asof.atl.calpoly.edu:exocube/ade-pib-driver.git
+ADE_PIB_DRIVER_SITE:=https://github.com/PolySat/ade-pib-driver.git
 ADE_PIB_DRIVER_SITE_METHOD:=git
 ADE_PIB_DRIVER_INSTALL_TARGET=YES
 #ADE_PIB_DRIVER_DEPENDENCIES=libproc openssl zlib libsatpkt

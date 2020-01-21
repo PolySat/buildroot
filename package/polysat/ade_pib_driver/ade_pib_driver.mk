@@ -16,7 +16,7 @@ ifeq ($(BR2_PACKAGE_ADE_PIB_DRIVER_location_initrd),y)
    ADE_PIB_DRIVER_LOCATION=$(TARGET_DIR)/lib
 endif
 
-ADE_PIB_DRIVER_LOCATION?=$(TARGET_DIR)/usr/local/lib
+ADE_PIB_DRIVER_LOCATION?=$(TARGET_DIR)/lib
 
 ifeq ($(BR2_PACKAGE_ADE_PIB_DRIVER_version_head),y)
    ADE_PIB_DRIVER_VERSION:=$(shell git ls-remote $(ADE_PIB_DRIVER_SITE) | grep HEAD | head -1 | sed -e 's/[ \t]*HEAD//')

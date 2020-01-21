@@ -1,7 +1,7 @@
 config BR2_PACKAGE_ADE_PIB_DRIVER
-    bool "ExoCube Payload Interface Board Driver"
+    bool "ADE PIB Board Driver"
     help
-        Provides driver(s) necessary for Exocube's payload interface board
+        Provides driver(s) necessary for ADE PIB board
 
 choice
    prompt "source code version"

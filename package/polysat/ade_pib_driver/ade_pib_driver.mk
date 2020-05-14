@@ -6,7 +6,7 @@
 ADE_PIB_DRIVER_SITE:=https://github.com/PolySat/ade-pib-driver.git
 ADE_PIB_DRIVER_SITE_METHOD:=git
 ADE_PIB_DRIVER_INSTALL_TARGET=YES
-#ADE_PIB_DRIVER_DEPENDENCIES=libproc openssl zlib libsatpkt
+ADE_PIB_DEPENDENCIES=polysat_fsw
 
 ifeq ($(BR2_PACKAGE_ADE_PIB_DRIVER_location_secondary),y)
    ADE_PIB_DRIVER_LOCATION=$(TARGET_DIR)/usr/local/lib

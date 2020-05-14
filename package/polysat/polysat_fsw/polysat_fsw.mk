@@ -21,6 +21,7 @@ endef
 
 define POLYSAT_FSW_INSTALL_STAGING_CMDS
    rsync -a $(@D)/staging/ $(STAGING_DIR)
+   rsync -a $(@D)/staging/usr/include/linux/polysat $(BUILD_DIR)/linux-*/include/linux
 endef
 
 define POLYSAT_FSW_INSTALL_TARGET_CMDS

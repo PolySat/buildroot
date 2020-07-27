@@ -8,5 +8,6 @@ source "package/polysat/atmel-isi/Config.in"
 source "package/polysat/uvccapture/Config.in"
 source "package/polysat/ade_pib_driver/Config.in"
 source "package/polysat/submodule_image/Config.in"
+source "package/polysat/ade_payload/Config.in"
 
 endmenu

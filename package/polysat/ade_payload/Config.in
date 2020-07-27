@@ -1,0 +1,40 @@
+config BR2_PACKAGE_ADE_PAYLOAD
+    bool "ADE Payload process"
+    help
+        Manages the payload for the ADE mission
+
+choice
+   prompt "source code version"
+   depends on BR2_PACKAGE_ADE_PAYLOAD
+   default BR2_PACKAGE_ADE_PAYLOAD_version_head
+   help
+        The version number of the code to install.
+
+   config BR2_PACKAGE_ADE_PAYLOAD_version_head
+      bool "HEAD"
+
+   config BR2_PACKAGE_ADE_PAYLOAD_version_custom
+      bool "Manual git version"
+
+endchoice
+
+choice
+   prompt "install location"
+   depends on BR2_PACKAGE_ADE_PAYLOAD
+   default BR2_PACKAGE_ADE_PAYLOAD_location_nandsecondary
+   help
+        Where the driver gets installed
+
+   config BR2_PACKAGE_ADE_PAYLOAD_location_secondary
+      bool "NAND"
+
+   config BR2_PACKAGE_ADE_PAYLOAD_location_initrd
+      bool "PCM"
+
+endchoice
+
+config BR2_PACKAGE_ADE_PAYLOAD_CONFIG_CUSTOM_VERSION_STR
+   string "payload source code version"
+   depends on BR2_PACKAGE_ADE_PAYLOAD_version_custom
+   help
+      Custom git tag to build.

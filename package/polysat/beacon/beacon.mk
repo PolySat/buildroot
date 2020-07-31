@@ -6,7 +6,7 @@
 BEACON_SITE:=https://github.com/PolySat/beacon
 BEACON_SITE_METHOD:=git
 BEACON_INSTALL_TARGET=YES
-BEACON_DEPENDENCIES=libproc libsatpkt
+BEACON_DEPENDENCIES=
 
 ifeq ($(BR2_PACKAGE_BEACON_version_head),y)
 BEACON_VERSION:=$(shell git ls-remote $(BEACON_SITE) | grep HEAD | head -1 | sed -e 's/[ \t]*HEAD//')

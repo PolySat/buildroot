@@ -1,0 +1,82 @@
+config BR2_PACKAGE_BEACON
+    bool "beacon"
+    select BR2_PACKAGE_LIBSATPKT
+    select BR2_PACKAGE_LIBPROC
+    help
+        Process that periodically generates a beacon packet.
+
+choice
+   prompt "Beacon Source Version"
+   default BR2_PACKAGE_BEACON_version_1_19
+   help
+      The git version of the beacon code to use
+
+   config BR2_PACKAGE_BEACON_version_head
+      bool "HEAD"
+
+   config BR2_PACKAGE_BEACON_version_custom
+      bool "Manually specify a git tag to build"
+
+   config BR2_PACKAGE_BEACON_version_1_19
+      bool "v1.19"
+
+   config BR2_PACKAGE_BEACON_version_1_0
+      bool "v1.0 (IPEX BF2)"
+
+endchoice
+
+config BR2_PACKAGE_BEACON_CONFIG_CUSTOM_VERSION_STR
+   string "beacon library version"
+   depends on BR2_PACKAGE_BEACON
+   depends on BR2_PACKAGE_BEACON_version_custom
+   help
+      Custom git tag to build.
+
+choice
+   prompt "Beacon format"
+   default BR2_PACKAGE_BEACON_fmt_1U
+   help
+      Select the beacon format to use
+
+   config BR2_PACKAGE_BEACON_fmt_Spinnaker3
+      bool "Spinnaker3"
+
+   config BR2_PACKAGE_BEACON_fmt_ISX
+      bool "ISX"
+
+   config BR2_PACKAGE_BEACON_fmt_lsb
+      select BR2_PACKAGE_PSCAM
+      bool "LightSail B"
+
+   config BR2_PACKAGE_BEACON_fmt_ExoCube
+      bool "ExoCube"
+
+   config BR2_PACKAGE_BEACON_fmt_1U
+      bool "Generic 1U"
+
+   config BR2_PACKAGE_BEACON_fmt_ipex1
+      bool "IPEX 1"
+
+   config BR2_PACKAGE_BEACON_fmt_ipexbf2
+      bool "IPEX Balloon Flight 2"
+
+   config BR2_PACKAGE_BEACON_fmt_ipexbf1
+      bool "IPEX Balloon Flight 1"
+
+   config BR2_PACKAGE_BEACON_fmt_ExoCube2
+      bool "ExoCube2"
+
+   config BR2_PACKAGE_BEACON_fmt_stub
+      bool "Stub (empty) beacon format"
+
+endchoice
+
+config BR2_PACKAGE_BEACON_AUTOTELEM
+    bool "Include beacon telemetry in telemetry auto-generation"
+    default y
+    depends on BR2_PACKAGE_BEACON
+    select BR2_PACKAGE_HOST_BEACON
+    help
+        Include telemetry points from beacon in the telemetry dictionaries
+           and configuration files that get generated during the buildroot
+           process

@@ -1,0 +1,6 @@
+config BR2_PACKAGE_HOST_BEACON
+    bool "beacon"
+    select BR2_PACKAGE_HOST_LIBSATPKT
+    select BR2_PACKAGE_HOST_LIBPROC
+    help
+        Process that generates the periodic telemetry beacon.

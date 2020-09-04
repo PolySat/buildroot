@@ -6,6 +6,7 @@
 ADE_PAYLOAD_SITE:=https://github.com/PolySat/ade-payload.git
 ADE_PAYLOAD_SITE_METHOD:=git
 ADE_PAYLOAD_INSTALL_TARGET=YES
+ADE_PAYLOAD_INSTALL_STAGING=YES
 ADE_PAYLOAD_DEPENDENCIES=polysat_fsw
 
 ifeq ($(BR2_PACKAGE_ADE_PAYLOAD_location_secondary),y)
@@ -41,4 +42,8 @@ define ADE_PAYLOAD_INSTALL_TARGET_CMDS
  $(MAKE) -C $(@D) HEADER_DIR=$(STAGING_DIR)/usr/include/linux/polysat INC_PATH=$(STAGING_DIR)/usr/include LIB_PATH=$(TARGET_DIR)/usr/lib BIN_PATH=$(TARGET_DIR)/usr/bin SBIN_PATH=$(TARGET_DIR)/usr/sbin PWD="$(@D)" KERNELDIR=$(LINUX_DIR) $(TARGET_CONFIGURE_OPTS) DRIVER_PATH=$(ADE_PAYLOAD_LOCATION)/drivers TARGET=arm  install
 endef
 
-$(eval $(call GENTARGETS,package,ade-pib-driver))
+define ADE_PAYLOAD_INSTALL_STAGING_CMDS
+ $(MAKE) -C $(@D) HEADER_DIR=$(STAGING_DIR)/usr/include/linux/polysat INC_PATH=$(STAGING_DIR)/usr/include LIB_PATH=$(STAGING_DIR)/usr/lib BIN_PATH=$(STAGING_DIR)/usr/bin SBIN_PATH=$(STAGING_DIR)/usr/sbin PWD="$(@D)" KERNELDIR=$(LINUX_DIR) $(TARGET_CONFIGURE_OPTS) DRIVER_PATH=$(ADE_PAYLOAD_LOCATION)/drivers TARGET=arm  install
+endef
+
+$(eval $(call GENTARGETS,package,ade-payload))

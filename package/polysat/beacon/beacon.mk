@@ -3,7 +3,7 @@
 # Polysat beacon
 #
 #############################################################
-BEACON_SITE:=https://github.com/PolySat/beacon
+BEACON_SITE:=git@github.com:PolySat/beacon.git
 BEACON_SITE_METHOD:=git
 BEACON_INSTALL_TARGET=YES
 BEACON_DEPENDENCIES=

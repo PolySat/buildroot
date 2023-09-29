@@ -3,7 +3,7 @@
 # Polysat exocube pib driver
 #
 #############################################################
-ADE_PAYLOAD_SITE:=https://github.com/PolySat/ade-payload.git
+ADE_PAYLOAD_SITE:=git@github.com:PolySat/ade-payload.git
 ADE_PAYLOAD_SITE_METHOD:=git
 ADE_PAYLOAD_INSTALL_TARGET=YES
 ADE_PAYLOAD_INSTALL_STAGING=YES

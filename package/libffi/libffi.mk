@@ -5,7 +5,7 @@
 #############################################################
 
 LIBFFI_VERSION = 3.0.11
-LIBFFI_SITE    = ftp://sources.redhat.com/pub/libffi/
+LIBFFI_SITE    = https://gcc.gnu.org/pub/libffi/
 
 LIBFFI_INSTALL_STAGING = YES
 

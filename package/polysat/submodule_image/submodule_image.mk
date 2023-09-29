@@ -17,6 +17,7 @@ define SUBMODULE_IMAGE_EXTRACT_CMDS
 endef
 
 define SUBMODULE_IMAGE_BUILD_CMDS
+	ls $(BASE_DIR)/../../../ 
 	rsync -a $(BASE_DIR)/../../rootfs/ $(@D)
 	cp $(BASE_DIR)/../../cleanup.sh $(@D)
 	touch $(DL_DIR)/$(SUBMODULE_IMAGE_SOURCE)

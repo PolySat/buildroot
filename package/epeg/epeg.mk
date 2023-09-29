@@ -3,7 +3,7 @@
 # epeg
 #
 #############################################################
-EPEG_VERSION = 248ae9f
+EPEG_VERSION = v0.9.3
 EPEG_SITE = https://github.com/mattes/epeg.git
 EPEG_SITE_METHOD=git
 EPEG_INSTALL_STAGING = YES

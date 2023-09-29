@@ -9,19 +9,21 @@ ATMEL_ISI_INSTALL_TARGET=YES
 ATMEL_ISI_INSTALL_STAGING=YES
 ATMEL_ISI_DEPENDENCIES=linux
 
-ifeq ($(BR2_PACKAGE_ATMEL_ISI_version_head),y)
-   ATMEL_ISI_VERSION:=$(shell git ls-remote $(ATMEL_ISI_SITE) | grep HEAD | head -1 | sed -e 's/[ \t]*HEAD//')
-endif
+#ifeq ($(BR2_PACKAGE_ATMEL_ISI_version_head),y)
+#   ATMEL_ISI_VERSION:=$(shell git ls-remote $(ATMEL_ISI_SITE) | grep HEAD | head -1 | sed -e 's/[ \t]*HEAD//')
+#endif
 
-ifeq ($(BR2_PACKAGE_ATMEL_ISI_version_custom),y)
-   ATMEL_ISI_VERSION=$(subst ",,$(BR2_PACKAGE_ATMEL_ISI_CONFIG_CUSTOM_VERSION_STR))
-endif
+#ifeq ($(BR2_PACKAGE_ATMEL_ISI_version_custom),y)
+#   ATMEL_ISI_VERSION=$(subst ",,$(BR2_PACKAGE_ATMEL_ISI_CONFIG_CUSTOM_VERSION_STR))
+#endif
 
-ifeq ($(BR2_PACKAGE_ATMEL_ISI),y)
-   ATMEL_ISI_VERSION?=$(shell git ls-remote $(ATMEL_ISI_SITE) | grep HEAD | head -1 | sed -e 's/[ \t]*HEAD//')
-else
-   ATMEL_ISI_VERSION?=v0.00
-endif
+#ifeq ($(BR2_PACKAGE_ATMEL_ISI),y)
+#   ATMEL_ISI_VERSION?=$(shell git ls-remote $(ATMEL_ISI_SITE) | grep HEAD | head -1 | sed -e 's/[ \t]*HEAD//')
+#else
+#   ATMEL_ISI_VERSION?=v0.00
+#endif
+
+ATMEL_ISI_VERSION:=v2.0
 
 define ATMEL_ISI_BUILD_CMDS
  $(ATMEL_ISI_MAKE_PARAMS) $(MAKE1) $(LINUX_MAKE_FLAGS) DEPMOD="$(HOST_DIR)/usr/sbin/depmod" M="$(@D)" -C "$(LINUX_DIR)" modules

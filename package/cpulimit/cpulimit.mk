@@ -3,7 +3,7 @@
 # cpulimit
 #
 #############################################################
-CPULIMIT_VERSION = HEAD
+CPULIMIT_VERSION = master
 #CPULIMIT_SOURCE = cpulimit-$(IPERF_VERSION).tar.gz
 CPULIMIT_SITE = https://github.com/opsengine/cpulimit.git
 CPULIMIT_SITE_METHOD=git
